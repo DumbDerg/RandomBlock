@@ -37,7 +37,6 @@ public class RandomBlockCommand implements CommandExecutor {
             }
         } else {
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4RandomBlock: You do not have permission to preform this command!"));
-
         }
         return true;
     }}
