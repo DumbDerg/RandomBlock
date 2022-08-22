@@ -1,7 +1,7 @@
 # RandomBlock
 <br>For 1.19 Servers
 <br>This is a stable release of the RandomBlock Plugin!
-<br>Disclaimer: this plugin is disabled by default, you have to enable it for it to start!
+<br><h2>Disclaimer: this plugin is disabled by default, you have to enable it for it to start!
 # Permissions:
 
 <br>RB.Admin | Lets you enable/disable plugin and reload the config
