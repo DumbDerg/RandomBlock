@@ -1,6 +1,7 @@
 # RandomBlock
 <br>For 1.19 Servers
 <br>This is a stable release of the RandomBlock Plugin!
+<br> Gives all players with a certain permission a random item every x seconds!
 <br><h2>Disclaimer: this plugin is disabled by default, you have to enable it for it to start!
 # Permissions:
 
