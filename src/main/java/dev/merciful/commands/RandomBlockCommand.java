@@ -18,15 +18,20 @@ public class RandomBlockCommand implements CommandExecutor {
                     Bukkit.getPluginManager().getPlugin("RandomBlock").getConfig().set("Enabled", true);
                     Plugin.plugin.saveConfig();
                     Plugin.plugin.reloadConfig();
+                    Plugin.startTask();
                 } else {
-                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "RandomBlock has been disabled!"));
+                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4RandomBlock has been disabled!"));
                     Bukkit.getPluginManager().getPlugin("RandomBlock").getConfig().set("Enabled", false);
                     Plugin.plugin.saveConfig();
                     Plugin.plugin.reloadConfig();
+                    Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED+"RandomBlock has been disabled!");
+                    Plugin.stopTask();
                 }
             } else if(args[0].equals("reload")){
                 sender.sendMessage("RandomBlock: Config.yml has reloaded!");
+                Plugin.stopTask();
                 Plugin.plugin.reloadConfig();
+                Plugin.startTask();
             }else {
                 sender.sendMessage("RandomBlock: Unknown sub command!");
             }
@@ -34,5 +39,5 @@ public class RandomBlockCommand implements CommandExecutor {
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4RandomBlock: You do not have permission to preform this command!"));
 
         }
-        return false;
+        return true;
     }}

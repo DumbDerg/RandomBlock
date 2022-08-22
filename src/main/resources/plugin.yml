@@ -5,3 +5,7 @@ api-version: 1.19
 authors: [ Merciful ]
 description: Get random item every xSeconds + can ban items
 website: https://merciful.dev
+commands:
+  randomblock:
+    usage: /<command> args
+    description: Command to manage the plugin!

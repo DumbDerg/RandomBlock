@@ -1,9 +1,10 @@
 package dev.merciful.main;
 
+import dev.merciful.commands.RandomBlockCommand;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitScheduler;
+import org.bukkit.scheduler.BukkitTask;
 
 public final class RandomBlock extends JavaPlugin {
 
@@ -11,14 +12,15 @@ public final class RandomBlock extends JavaPlugin {
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage("RandomBlock has started!");
         Plugin instance = new Plugin(this);
+        Plugin.startTask();
         saveDefaultConfig();
-        BukkitScheduler scheduler = getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(this, () -> {
-            // Do something
-        }, 0L, 20L);
-    }
+        getCommand("randomblock").setExecutor(new RandomBlockCommand());
+        if(!getConfig().getBoolean("Enabled")){
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED+"RandomBlock is disabled!");
+        }
 
     }
+
         @Override
         public void onDisable() {
             Bukkit.getConsoleSender().sendMessage("RandomBlock has stopped!");

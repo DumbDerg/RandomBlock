@@ -1,6 +1,5 @@
 package dev.merciful.util;
 
-import dev.merciful.main.GiveItems;
 import dev.merciful.main.Plugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -11,7 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomItem {
-    private static Material getRandomItem() {
+    public static Material getRandomItem() {
         Random random = new Random();
         List<String> blacklisted = Bukkit.getPluginManager().getPlugin("RandomBlock").getConfig().getStringList("Blacklisted Items");
         Material randomItem = Material.values()[random.nextInt(Material.values().length)];
@@ -26,20 +25,24 @@ public class RandomItem {
 
     public static void givePlayersItem() {
         List<Player> players = (List<Player>) Bukkit.getServer().getOnlinePlayers();
-        if(!players.isEmpty()){
-        for (int j = 0; j < players.size(); j++) {
-            if (players.get(j).hasPermission(Bukkit.getPluginManager().getPlugin("RandomBlock").getConfig().getString("Permission Name"))) {
-                players.get(1).getInventory().addItem(new ItemStack(getRandomItem(), 1));
-
-            }}
+        if (!players.isEmpty()) {
+            if(!Plugin.plugin.getConfig().getBoolean("Same Item Per Player")){
+            for (int j = 0; j < players.size(); j++) {
+                if (players.get(j).hasPermission(Bukkit.getPluginManager().getPlugin("RandomBlock").getConfig().getString("Permission Name"))) {
+                    if (!players.get(j).isDead()) {
+                        players.get(j).getInventory().addItem(new ItemStack(getRandomItem(), 1));
+                    }
+                }
+                }
+            }else {
+                ItemStack item = new ItemStack(getRandomItem(), 1);
+                for(int k = 0; k < players.size(); k++){
+                    if (players.get(k).hasPermission(Bukkit.getPluginManager().getPlugin("RandomBlock").getConfig().getString("Permission Name"))) {
+                        if (!players.get(k).isDead()) {
+                            players.get(k).getInventory().addItem(item);
+                        }
+                }
+            }
         }
     }
-    public static void runTask(){
-        GiveItems run = new GiveItems();
-        if(Plugin.plugin.getConfig().getBoolean("Enabled")) {
-            run.runTask(Plugin.plugin);
-        }else{
-            run.runTask(Plugin.plugin).cancel();
-        }
-    }
-}
+}}
