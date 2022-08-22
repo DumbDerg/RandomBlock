@@ -4,14 +4,13 @@ import org.bukkit.scheduler.BukkitTask;
 
 public class Plugin {
     public static RandomBlock plugin;
-    public static BukkitTask task;
+    private static BukkitTask task;
 
     public Plugin(RandomBlock plugin) {
         Plugin.plugin = plugin;
     }
     public static void startTask(){
-        BukkitTask task = new GiveItems().runTaskTimer(plugin, 1, 20L * Plugin.plugin.getConfig().getInt("Interval"));
-        task = Plugin.task;
+        Plugin.task = new GiveItems().runTaskTimer(plugin, 1L, 20L * Plugin.plugin.getConfig().getInt("Interval"));
     }
     public static void stopTask(){
         task.cancel();

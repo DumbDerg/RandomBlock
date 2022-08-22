@@ -6,7 +6,7 @@
 
     <groupId>dev.merciful</groupId>
     <artifactId>RandomBlock</artifactId>
-    <version>0.99</version>
+    <version>1.00</version>
     <packaging>jar</packaging>
 
     <name>RandomBlock</name>

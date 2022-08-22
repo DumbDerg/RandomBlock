@@ -14,6 +14,8 @@ Interval: 30
 
 Same Item Per Player: false
 
+Drop Item If Full Inventory: false
+
 Blacklisted Items:
 - "AIR"
 - "COMMAND_BLOCK"
@@ -24,3 +26,8 @@ Blacklisted Items:
 - "END_PORTAL_FRAME"
 - "BEDROCK"
 - "STRUCTURE_BLOCK"
+- "DEBUG_STICK"
+- "JIGSAW_BLOCK"
+- "LIGHT"
+- "REPEATING_COMMAND_BLOCK"
+- "COMMAND_BLOCK)_MINECART"
