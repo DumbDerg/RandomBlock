@@ -2,15 +2,15 @@
 <br>For 1.19 Servers
 <br>This is a stable release of the RandomBlock Plugin!
 <br>Disclaimer: this plugin is disabled by default, you have to enable it for it to start!
-<br>Permissions:
+# Permissions:
 
 <br>RB.Admin | Lets you enable/disable plugin and reload the config
 <br>RB.RandomBlockGive | The permission for the players to be given the random items
-<br>Commands:
+# Commands:
 
 <br>/RandomBlock | Enable/Disable the plugin
 <br>/RandomBlock reload | Reload the configs.yml
-<br>Config.yml:
+# Config.yml:
 
 <br>Enabled | Enable/Disable the Plugin
 <br>Permission Name | The permission for the players to be given the items
