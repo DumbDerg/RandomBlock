@@ -52,6 +52,4 @@ public class RandomItem {
         }
     }
 }
-    private static void dropItem(){
-    }
 }
