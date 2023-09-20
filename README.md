@@ -1,4 +1,4 @@
-# RandomBlock
+# RandomBlock ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 <br>For 1.19-1.19.2 (Recommended to update to 1.19.2 | 1.19.1 may have an exploit with it) Servers
 <br>This is a stable release of the RandomBlock Plugin!
 <br> Gives all players with a certain permission a random item every x seconds!
